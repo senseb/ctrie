@@ -8,19 +8,46 @@
 
 #include <stdlib.h>
 
-#define LEAF_SIZE 256
+#define BOOL int
+#define W 5
 
-typedef struct hashTrieTreeItem_t {
-  int level;
-  int filled;
-  void* items[LEAF_SIZE];
-} hashTrieTreeItem_t;
+typedef enum NodeType_t { 
+  CNode = 0, 
+  SNode = 1 
+} NodeType_t;
+
+typedef struct CNode_t {
+  unsigned int bmp;
+  struct MainNode_t* array[2 << (W - 1)];
+} CNode_t;
+
+typedef struct SNode_t {
+  void* key;
+  void* value;
+  BOOL tomb;
+} SNode_t;
+
+typedef struct MainNode_t {
+  NodeType_t type;
+  union {
+    CNode_t cnode;
+    SNode_t snode;
+  };
+} MainNode_t;
+
+typedef struct INode_t {
+  MainNode_t* mainnode;
+} INode_t;
+
+typedef struct CTrie_t {
+  INode_t* root;
+} CTrie_t;
 
 typedef struct addDownResult_t {
   int added;
   size_t oldData;
 } addDownResult_t;
 
-addDownResult_t hashTrie_addDown( hashTrieTreeItem_t* _this, size_t value, size_t data, size_t hash );
+void ctrie_insert( CTrie_t* _this, void* key, void* value );
 
 #endif

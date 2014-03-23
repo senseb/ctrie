@@ -5,11 +5,12 @@
 
 #include "ctrie.h"
 
-addDownResult_t hashTrie_addDown( hashTrieTreeItem_t* _this, size_t value, size_t data, size_t hash ) {
-  addDownResult_t result;
+#define IS_NULL_INODE( node ) ( !r->mainnode )
 
-  result.added = 1;
-  result.oldData = 0;
+void ctrie_insert( CTrie_t* _this, void* key, void* value ) {
+  INode_t* r = _this->root;
 
-  return result;
+  if( !r || IS_NULL_INODE( r ) ) {
+
+  }
 }

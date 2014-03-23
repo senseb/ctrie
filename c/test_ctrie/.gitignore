@@ -2,3 +2,4 @@
 *.suo
 *.sdf
 *.vcxproj.user
+/ipch/
