@@ -1,0 +1,3 @@
+[submodule "__submodules/Google_GoogleTest"]
+	path = __submodules/Google_GoogleTest
+	url = git@github.com:Convey-Compliance/Google_GoogleTest.git
