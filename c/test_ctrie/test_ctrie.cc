@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "ctrie.h"
+#include "ctrie_superfast_hash.h"
 
 TEST( TestCTrie, test_create ) {
   CTrie_t trie[1];
