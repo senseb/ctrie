@@ -1,43 +1,56 @@
-/*    Copyright 2013-2014 Convey Compliance Systems, Inc.
+/*    Copyright 2013-2014 Jose Sebastian Battig, Inc.
  *
  *    All rights reserved. No warranty, explicit or implicit, provided. 
  */
 
-#ifndef HASH_TRIE_H
-#define HASH_TRIE_H
+#ifndef CTRIE_H
+#define CTRIE_H
 
 #include <stdlib.h>
+#include <stdint.h>
+
+#ifdef __cplusplus
+  extern "C" {
+#endif
 
 #define BOOL int
-#define W 5
+#define FALSE 0
+#define TRUE 1
+#define K 5
+#define ARRAY_COUNT ( 2 << (K - 1) )
+
+typedef struct Key_t {
+  unsigned int hc;
+  void* key;
+} Key_t;
 
 typedef enum NodeType_t { 
-  CNode = 0, 
-  SNode = 1 
+  CNODE = 0, 
+  SNODE = 1,
+  INODE = 2
 } NodeType_t;
+
+//typedef struct ArrayNode_t* ArrayNodeArray_t;
 
 typedef struct CNode_t {
   unsigned int bmp;
-  struct MainNode_t* array[2 << (W - 1)];
+  struct ArrayNode_t* arr;
 } CNode_t;
 
 typedef struct SNode_t {
-  void* key;
+  Key_t key;
   void* value;
   BOOL tomb;
 } SNode_t;
 
-typedef struct MainNode_t {
+typedef struct ArrayNode_t {
   NodeType_t type;
   union {
-    CNode_t cnode;
-    SNode_t snode;
+    void* node;
+    SNode_t* snode;
+    struct INode_t* inode;
   };
-} MainNode_t;
-
-typedef struct INode_t {
-  MainNode_t* mainnode;
-} INode_t;
+} ArrayNode_t;
 
 typedef struct CTrie_t {
   INode_t* root;
@@ -48,6 +61,12 @@ typedef struct addDownResult_t {
   size_t oldData;
 } addDownResult_t;
 
-void ctrie_insert( CTrie_t* _this, void* key, void* value );
+uint32_t SuperFastHash (const char * data, int len);
+void CTrie_init( CTrie_t* _this );
+void CTrie_insert( CTrie_t* _this, Key_t* key, void* value );
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

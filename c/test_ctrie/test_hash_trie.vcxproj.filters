@@ -24,9 +24,57 @@
     <ClCompile Include="..\..\__submodules\Google_GoogleTest\gtest\src\gtest-all.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ctrie_key.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrie_branch_array.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrie_c_node.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrie_i_node.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrie_main_node.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrie_s_node.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrie_t_node.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ctrie_l_node.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ctrie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_key.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_branch_array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_c_node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_i_node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_main_node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_s_node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_t_node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ctrie_l_node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

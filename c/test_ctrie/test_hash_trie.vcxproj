@@ -82,10 +82,26 @@
   <ItemGroup>
     <ClCompile Include="..\..\__submodules\Google_GoogleTest\gtest\src\gtest-all.cc" />
     <ClCompile Include="..\ctrie.c" />
+    <ClCompile Include="ctrie_branch_array.c" />
+    <ClCompile Include="ctrie_key.c" />
+    <ClCompile Include="ctrie_c_node.c" />
+    <ClCompile Include="ctrie_i_node.c" />
+    <ClCompile Include="ctrie_l_node.c" />
+    <ClCompile Include="ctrie_main_node.c" />
+    <ClCompile Include="ctrie_s_node.c" />
+    <ClCompile Include="ctrie_t_node.c" />
     <ClCompile Include="test_ctrie.cc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\ctrie.h" />
+    <ClInclude Include="ctrie_branch_array.h" />
+    <ClInclude Include="ctrie_key.h" />
+    <ClInclude Include="ctrie_c_node.h" />
+    <ClInclude Include="ctrie_i_node.h" />
+    <ClInclude Include="ctrie_l_node.h" />
+    <ClInclude Include="ctrie_main_node.h" />
+    <ClInclude Include="ctrie_s_node.h" />
+    <ClInclude Include="ctrie_t_node.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
